@@ -51,28 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {
-	var app = Application.currentApplication()
-	app.includeStandardAdditions = true
-
-	var inputStr = input[0]; 
-	var emailsRe = /[.a-z0-9]+@[a-z0-9]+.(com|edu)/g;
-	var atSymbolsRe = /@/g;
-
-	var atSymbolMatches = inputStr.match(atSymbolsRe)
-	var emailMatches = inputStr.match(emailsRe)
-	
-	var msg;
-	if (emailMatches.length === atSymbolMatches.length) {
-	  msg = `Found ${emailMatches.length} emails:\n\n` + emailMatches;
-	} else {
-	  msg = `FAIL: number of '@' symbols (${atSymbolMatches.length})`;
-	  msg += ` doesn't match number of emails found (${emailMatches.length}),`;
-	  msg += " are you sure you highlighted all the text correctly?"
-	  msg += "\n\n" + emailMatches;
-	}
-	
-	app.displayDialog(msg)}</string>
+					<string>function run(input, parameters) {	var app = Application.currentApplication()	app.includeStandardAdditions = true	var inputStr = input[0]; 	var emailsRe = /[.a-z0-9]+@[a-z0-9]+.(com|edu)/g;	var atSymbolsRe = /@/g;	var atSymbolMatches = inputStr.match(atSymbolsRe)	var emailMatches = inputStr.match(emailsRe)		var msg;	if (emailMatches.length === atSymbolMatches.length) {	  msg = `Found ${emailMatches.length} emails, don't for get to paste as BCC!\n\n` + emailMatches;	} else {	  msg = `FAIL: number of '@' symbols (${atSymbolMatches.length})`;	  msg += ` doesn't match number of emails found (${emailMatches.length}),`;	  msg += " are you sure you highlighted all the text correctly?"	  msg += "\n\n" + emailMatches;	}		app.displayDialog(msg)}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -127,7 +106,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:551.000000</string>
+				<string>529.000000:316.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
